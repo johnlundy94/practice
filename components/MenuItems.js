@@ -26,6 +26,16 @@ const menuItemsToDisplay = [
   { name: "Panna Cotta", price: "$5.00", id: "21V" },
 ];
 
+const Separator = () => <View style={menuStyles.separator} />;
+
+const Header = () => <Text style={menuStyles.headerText}>View Menu</Text>;
+
+const Footer = () => {
+  <Text style={menuStyles.footerText}>
+    All Rights Reserved By John Lundy 2024
+  </Text>;
+};
+
 const Item = ({ name, price }) => (
   <View style={menuStyles.innerContainer}>
     <Text style={menuStyles.itemText}>{name}</Text>
@@ -42,6 +52,9 @@ const MenuItems = () => {
         data={menuItemsToDisplay}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
+        ItemSeparatorComponent={Separator}
+        ListHeaderComponent={Header}
+        ListFooterComponent={Footer}
       ></FlatList>
     </View>
   );
@@ -60,6 +73,24 @@ const menuStyles = StyleSheet.create({
   itemText: {
     color: "#F4CE14",
     fontSize: 20,
+  },
+  headerText: {
+    color: "#EDEFEE",
+    fontSize: 40,
+    paddingVertical: 8,
+    flexWrap: "wrap",
+    textAlign: "center",
+  },
+  separator: {
+    borderBottomWidth: 1,
+    borderColor: "#EDEFEE",
+  },
+  footerText: {
+    flexWrap: "wrap",
+    fontSize: 18,
+    color: "white",
+    textAlign: "center",
+    fontStyle: "italic",
   },
 });
 
