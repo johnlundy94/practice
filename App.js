@@ -1,14 +1,14 @@
 import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import LittleLemonHeader from "./components/LittleLemonHeader";
-import MenuItems from "./components/MenuItems";
+import FeedbackForm from "./components/FeedbackForm";
 
 export default function App() {
   return (
     <>
       <View style={styles.container}>
         <LittleLemonHeader />
-        <MenuItems />
+        <FeedbackForm />
       </View>
     </>
   );
