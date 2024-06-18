@@ -1,7 +1,8 @@
 import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import LittleLemonHeader from "./components/LittleLemonHeader";
-import LoginScreen from "./components/LoginScreen";
+import Welcome from "./components/Welcome";
+// import LoginScreen from "./components/LoginScreen";
 // import MenuItems from "./components/MenuItems";
 
 export default function App() {
@@ -9,8 +10,9 @@ export default function App() {
     <>
       <View style={styles.container}>
         <LittleLemonHeader />
-        <LoginScreen />
+        {/* <LoginScreen /> */}
         {/* <MenuItems /> */}
+        <Welcome />
       </View>
     </>
   );
