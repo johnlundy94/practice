@@ -1,8 +1,10 @@
 import { ScrollView, View, Text, StyleSheet, Image } from "react-native";
 import { useColorScheme } from "react-native";
+import { useWindowDimensions } from "react-native";
 
 export default function Welcome() {
   const colorScheme = useColorScheme();
+  const window = useWindowDimensions();
 
   return (
     <ScrollView
@@ -25,6 +27,10 @@ export default function Welcome() {
         <Text style={styles.headerText}>Little Lemon</Text>
       </View>
       <Text style={styles.regular}>Color Scheme: {colorScheme}</Text>
+      <Text style={styles.regular}>Window Dimensions</Text>
+      <Text style={styles.regular}>Height: {window.height}</Text>
+      <Text style={styles.regular}>Width: {window.width}</Text>
+      <Text style={styles.regular}>Font scale: {window.fontScale}</Text>
       <Text style={styles.regularText}>
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic cocktails in a lively but casual environment. We would love
