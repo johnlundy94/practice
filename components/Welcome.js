@@ -1,8 +1,18 @@
 import { ScrollView, View, Text, StyleSheet, Image } from "react-native";
+import { useColorScheme } from "react-native";
 
 export default function Welcome() {
+  const colorScheme = useColorScheme();
+
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      style={[
+        styles.container,
+        colorScheme === "light"
+          ? { backgroundColor: "#fff" }
+          : { backgroundColor: "#333333" },
+      ]}
+    >
       <View style={styles.headerWrapper}>
         <Image
           style={styles.image}
@@ -14,6 +24,7 @@ export default function Welcome() {
 
         <Text style={styles.headerText}>Little Lemon</Text>
       </View>
+      <Text style={styles.regular}>Color Scheme: {colorScheme}</Text>
       <Text style={styles.regularText}>
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic cocktails in a lively but casual environment. We would love
@@ -52,5 +63,9 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 20,
+  },
+  regular: {
+    fontSize: 18,
+    textAlign: "center",
   },
 });
